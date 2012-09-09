@@ -6,25 +6,27 @@ require "fileutils"
 
 require "plist"
 
+require "motion/settings/configuration"
 require "motion/settings/generator"
 require "motion/settings/version"
 
 module Motion
   module Settings
-    def self.setup
+    class << self
+      attr_accessor :generator
 
+      def setup(&block)
+        generator.configure(Configuration.new(&block))
+      end
     end
 
-    def self.generate
-      generator = Generator.new(App.config.resources_dir)
-      generator.generate
-    end
+    self.generator = Generator.new(App.config.resources_dir)
   end
 end
 
 desc "Generate a Settings.bundle"
 task :settings do
-  Motion::Settings.generate
+  Motion::Settings.generator.generate
 end
 
 %w(build:simulator build:device).each do |build_task|

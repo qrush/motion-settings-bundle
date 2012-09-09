@@ -5,6 +5,10 @@ module Motion
         @root_path = File.join(resources_dir, "Settings.bundle")
       end
 
+      def configure(configuration)
+        @configuration = configuration
+      end
+
       def generate
         directory @root_path
 
@@ -29,9 +33,7 @@ EOF
           file.write({
             "Title"                => "Settings",
             "StringsTable"         => "Root",
-            "PreferenceSpecifiers" => [
-              {"Title" => "Read Only", "Key" => "readonlykey", "DefaultValue" => "Read Only Duh", "Type" => "PSTitleValueSpecifier"}
-            ]
+            "PreferenceSpecifiers" => @configuration.preferences
           }.to_plist)
         end
       end
