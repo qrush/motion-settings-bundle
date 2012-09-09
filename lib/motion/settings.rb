@@ -3,6 +3,9 @@ unless defined?(Motion::Project::Config)
 end
 
 require "fileutils"
+
+require "plist"
+
 require "motion/settings/generator"
 require "motion/settings/version"
 
