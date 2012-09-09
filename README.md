@@ -36,7 +36,7 @@ Motion::Settings.setup do |app|
   app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
 
   # A slider, configure volume or something linear
-  app.slider "Spice Level", key: "spiceLevel", min: 1, max: 100
+  app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
   # Jump to a screen and choose from a list of options
   app.group "Occupation", key: "occupation" do |group|

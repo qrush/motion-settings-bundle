@@ -4,8 +4,8 @@ require "bundler/gem_tasks"
 desc "Test by generating an app"
 task :default do
   dir = "MotionSettingsTest"
-  sh "rm -rf #{dir}"
-  sh "motion create #{dir}"
+  `rm -rf #{dir}`
+  `motion create #{dir}`
   Dir.chdir(dir) do
     File.open("Gemfile", "w") do |f|
       f.write <<-EOF
@@ -14,7 +14,7 @@ task :default do
       EOF
     end
 
-    sh "bundle --local"
+    `bundle --local`
 
     File.open("Rakefile", "a") do |f|
       f.write <<-EOF
@@ -35,7 +35,7 @@ Motion::Settings.setup do |app|
   app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
 
   # A slider, configure volume or something linear
-  app.slider "Spice Level", key: "spiceLevel", min: 1, max: 100
+  app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
   # Jump to a screen and choose from a list of options
   app.group "Occupation", key: "occupation" do |group|
@@ -47,6 +47,9 @@ end
       EOF
     end
 
+    puts "*" * 80
+    puts "Booting up the simulator! Jump to the Settings app once booted and open '#{dir}'."
+    puts "*" * 80
     sh "rake"
   end
 end
