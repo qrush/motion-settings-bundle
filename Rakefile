@@ -18,31 +18,32 @@ task :default do
 
     File.open("Rakefile", "a") do |f|
       f.write <<-EOF
-        require 'bundler'
-        Bundler.setup
 
-        require 'motion/settings'
+require 'bundler'
+Bundler.setup
 
-        Motion::Settings.setup do |app|
-          # A text field. Allows configuration of a string.
-          app.text "Name", key: "username", default: "Paul Atreides"
+require 'motion/settings'
 
-          # A read-only text field. Use for showing a small chunk of text, maybe a version number
-          app.title "Year of Birth", key: "yearOfBirth", default: "10,175 AG"
+Motion::Settings.setup do |app|
+  # A text field. Allows configuration of a string.
+  app.text "Name", key: "username", default: "Paul Atreides"
 
-          # An on/off switch. Turn something on or off. Default is `false` (off).
-          app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
+  # A read-only text field. Use for showing a small chunk of text, maybe a version number
+  app.title "Year of Birth", key: "yearOfBirth", default: "10,175 AG"
 
-          # A slider, configure volume or something linear
-          app.slider "Spice Level", key: "spiceLevel", min: 1, max: 100
+  # An on/off switch. Turn something on or off. Default is `false` (off).
+  app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
 
-          # Jump to a screen and choose from a list of options
-          app.group "Occupation", key: "occupation" do |group|
-            group.option "Padishah Emperor"
-            group.option "Mentat", default: true
-            group.option "Duke of House Atreides"
-          end
-        end
+  # A slider, configure volume or something linear
+  app.slider "Spice Level", key: "spiceLevel", min: 1, max: 100
+
+  # Jump to a screen and choose from a list of options
+  app.group "Occupation", key: "occupation" do |group|
+    group.option "Padishah Emperor"
+    group.option "Mentat", default: true
+    group.option "Duke of House Atreides"
+  end
+end
       EOF
     end
 
