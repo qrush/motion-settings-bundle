@@ -3,7 +3,7 @@ require "bundler/gem_tasks"
 
 desc "Test by generating an app"
 task :default do
-  dir = "tmp"
+  dir = "MotionSettingsTest"
   sh "rm -rf #{dir}"
   sh "motion create #{dir}"
   Dir.chdir(dir) do
