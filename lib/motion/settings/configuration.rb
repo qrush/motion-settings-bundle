@@ -9,11 +9,16 @@ module Motion
       end
 
       def text(title, options = {})
-        puts "Text: #{title}"
+        @preferences << preference(title, "PSTextFieldSpecifier", options).merge({
+          "IsSecure"               => false,
+          "KeyboardType"           => "Alphabet",
+          "AutoCapitalizationType" => "Sentences",
+          "AutocorrectionType"     => "Default"
+        })
       end
 
       def title(title, options = {})
-        @preferences << {"Title" => title, "Key" => options[:key], "DefaultValue" => options[:default], "Type" => "PSTitleValueSpecifier"}
+        @preferences << preference(title, "PSTitleValueSpecifier", options)
       end
 
       def toggle(title, options = {})
@@ -26,6 +31,12 @@ module Motion
 
       def group(title, options = {})
         puts "Group: #{title}"
+      end
+
+      private
+
+      def preference(title, type, options = {})
+        {"Title" => title, "Key" => options[:key], "DefaultValue" => options[:default], "Type" => type}
       end
     end
   end
