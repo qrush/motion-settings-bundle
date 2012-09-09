@@ -45,11 +45,9 @@ Motion::Settings.setup do |app|
 end
 ```
 
-Now run:
+Now just run `rake` as normal!
 
-    rake settings
-
-That should add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, just re-run this rake task and it will re-generate it.
+This should now add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, it will be re-built on the next `rake` run.
 
 ## Contributing
 
