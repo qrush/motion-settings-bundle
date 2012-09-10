@@ -23,8 +23,8 @@ module Motion
 
       def toggle(title, options = {})
         preference(title, "PSToggleSwitchSpecifier", options, {
-          "TrueValue"  => "YES",
-          "FalseValue" => "YES"
+          "TrueValue"  => true,
+          "FalseValue" => false
         })
       end
 
