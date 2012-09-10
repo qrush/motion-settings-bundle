@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "motion-settings-bundle"
   gem.require_paths = ["lib"]
-  gem.version       = Motion::Settings::VERSION
+  gem.version       = Motion::SettingsBundle::VERSION
 
   gem.add_dependency 'plist', '~> 3.1.0'
   gem.add_development_dependency 'rake'

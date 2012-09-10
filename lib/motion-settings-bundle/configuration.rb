@@ -1,5 +1,5 @@
 module Motion
-  module Settings
+  module SettingsBundle
     class Configuration
       attr_reader :preferences
 

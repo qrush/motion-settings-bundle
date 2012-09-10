@@ -24,7 +24,7 @@ Bundler.setup
 
 require 'motion-settings-bundle'
 
-Motion::Settings.setup do |app|
+Motion::SettingsBundle.setup do |app|
   # A text field. Allows configuration of a string.
   app.text "Name", key: "username", default: "Paul Atreides"
 

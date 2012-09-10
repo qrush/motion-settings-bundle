@@ -11,7 +11,7 @@ require "motion-settings-bundle/generator"
 require "motion-settings-bundle/version"
 
 module Motion
-  module Settings
+  module SettingsBundle
     class << self
       attr_accessor :generator
 
@@ -26,7 +26,7 @@ end
 
 desc "Generate a Settings.bundle"
 task :settings do
-  Motion::Settings.generator.generate
+  Motion::SettingsBundle.generator.generate
 end
 
 %w(build:simulator build:device).each do |build_task|

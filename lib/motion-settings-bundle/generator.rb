@@ -1,5 +1,5 @@
 module Motion
-  module Settings
+  module SettingsBundle
     class Generator
       def initialize(resources_dir)
         @root_path = File.join(resources_dir, "Settings.bundle")
