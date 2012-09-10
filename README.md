@@ -39,7 +39,7 @@ Motion::Settings.setup do |app|
   app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
   # Jump to a screen and choose from a list of options
-  app.group "Occupation", key: "occupation" do |group|
+  app.options "Occupation", key: "occupation" do |group|
     group.option "Padishah Emperor"
     group.option "Mentat", default: true
     group.option "Duke of House Atreides"
@@ -51,7 +51,16 @@ Now just run `rake` as normal!
 
 This should now add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, it will be re-built on the next `rake` run.
 
+## TODO
+
+* Make `options` entry work
+* Add a big chunk of text, like licensing info
+* Add a custom label, "Settings for Blah"
+* Don't re-create files every time
+
 ## Contributing
+
+I couldn't figure out how to test this automatically. Run `bundle` to get the gems you need, and then `rake` to generate a RubyMotion app in the iOS simulator, and then open the Settings app.
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

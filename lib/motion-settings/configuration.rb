@@ -35,8 +35,7 @@ module Motion
         })
       end
 
-      def group(title, options = {})
-        puts "Group: #{title}"
+      def options(title, options = {})
       end
 
       private

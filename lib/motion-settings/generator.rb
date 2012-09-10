@@ -29,7 +29,7 @@ EOF
 
         plist_file_path = File.join(@root_path, "Root.plist")
 
-        file plist_file_path do |file|
+        file(plist_file_path, true) do |file|
           file.write({
             "Title"                => "Settings",
             "StringsTable"         => "Root",
@@ -47,8 +47,8 @@ EOF
         end
       end
 
-      def file(path)
-        unless File.exist?(path)
+      def file(path, force = false)
+        if force || !File.exist?(path)
           File.open(path, "w") do |file|
             yield file
           end

@@ -38,7 +38,7 @@ Motion::Settings.setup do |app|
   app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
   # Jump to a screen and choose from a list of options
-  app.group "Occupation", key: "occupation" do |group|
+  app.options "Occupation", key: "occupation" do |group|
     group.option "Padishah Emperor"
     group.option "Mentat", default: true
     group.option "Duke of House Atreides"
