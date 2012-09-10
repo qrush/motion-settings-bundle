@@ -2,8 +2,6 @@
 
 Create a Settings.bundle for your RubyMotion app. This allows your app to have a "global" settings entry in the Settings app.
 
-Note: This project really solely exists to avoid creating/editing the Settings.bundle in XCode. The specs for it so far have been based off mordaroso/rubymotion-settings. Please feel free to contribute more ways to generate settings!
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -64,6 +62,8 @@ And so on. Just remember, the defaults aren't populated until your user actually
 
 ## TODO
 
+This project really solely exists to avoid creating/editing the Settings.bundle in XCode. The specs for it so far have been based off [mordaroso/rubymotion-settings](https://github/mordaroso/rubymotion-settings). Please feel free to contribute more ways to generate settings!
+
 * Make `options` entry work
 * Add a big chunk of text, like licensing info
 * Add a custom label, "Settings for Blah"
@@ -73,6 +73,8 @@ And so on. Just remember, the defaults aren't populated until your user actually
 ## Contributing
 
 I couldn't figure out how to test this automatically. Run `bundle` to get the gems you need, and then `rake` to generate a RubyMotion app in the iOS simulator, and then open the Settings app.
+
+If you've added a setting it would be really nice if you could update `screenshot.png` as well!
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
