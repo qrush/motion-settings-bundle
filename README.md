@@ -49,7 +49,18 @@ end
 
 Now just run `rake` as normal!
 
-This should now add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, it will be re-built on the next `rake` run.
+This should now add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, it will be re-built on the next `rake` run. You'll end up with something like this:
+
+![screenshot of motion-settings](screenshot.png)
+
+If you're wondering how to access this in code, it's pretty easy:
+
+``` ruby
+NSUserDefaults.standardUserDefaults["username"]
+# returns "Paul Atreides"
+```
+
+And so on. Just remember, the defaults aren't populated until your user actually opens the Settings app, so make sure to handle all of your setting entries being `nil`.
 
 ## TODO
 
