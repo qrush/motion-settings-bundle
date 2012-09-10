@@ -51,7 +51,7 @@ Now just run `rake` as normal!
 
 This should now add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, it will be re-built on the next `rake` run. You'll end up with something like this:
 
-![screenshot of motion-settings](screenshot.png)
+![screenshot of motion-settings](https://raw.github.com/qrush/motion-settings/master/screenshot.png)
 
 If you're wondering how to access this in code, it's pretty easy:
 
