@@ -57,6 +57,7 @@ This should now add a `Settings.bundle` folder into your `resources` directory. 
 * Add a big chunk of text, like licensing info
 * Add a custom label, "Settings for Blah"
 * Don't re-create files every time
+* Slider default level doesn't seem to work yet
 
 ## Contributing
 
