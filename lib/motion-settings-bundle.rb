@@ -6,9 +6,9 @@ require "fileutils"
 
 require "plist"
 
-require "motion-settings/configuration"
-require "motion-settings/generator"
-require "motion-settings/version"
+require "motion-settings-bundle/configuration"
+require "motion-settings-bundle/generator"
+require "motion-settings-bundle/version"
 
 module Motion
   module Settings

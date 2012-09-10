@@ -10,7 +10,7 @@ task :default do
     File.open("Gemfile", "w") do |f|
       f.write <<-EOF
         source :rubygems
-        gem "motion-settings", :path => ".."
+        gem "motion-settings-bundle", :path => ".."
       EOF
     end
 
@@ -22,7 +22,7 @@ task :default do
 require 'bundler'
 Bundler.setup
 
-require 'motion-settings'
+require 'motion-settings-bundle'
 
 Motion::Settings.setup do |app|
   # A text field. Allows configuration of a string.

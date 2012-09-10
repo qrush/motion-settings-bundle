@@ -1,4 +1,4 @@
-# motion-settings
+# motion-settings-bundle
 
 Create a Settings.bundle for your RubyMotion app. This allows your app to have a "global" settings entry in the Settings app.
 
@@ -6,7 +6,7 @@ Create a Settings.bundle for your RubyMotion app. This allows your app to have a
 
 Add this line to your application's Gemfile:
 
-    gem 'motion-settings'
+    gem 'motion-settings-bundle'
 
 And then execute:
 
@@ -14,14 +14,14 @@ And then execute:
 
 Or install it yourself as:
 
-    gem install motion-settings
+    gem install motion-settings-bundle
 
 ## Usage
 
 Add a chunk of code into your project's `Rakefile` like so:
 
 ``` ruby
-require 'motion-settings'
+require 'motion-settings-bundle'
 
 Motion::Settings.setup do |app|
   # A text field. Allows configuration of a string.
@@ -49,7 +49,7 @@ Now just run `rake` as normal!
 
 This should now add a `Settings.bundle` folder into your `resources` directory. Make sure to commit it! If you ever change the data in the `Settings.setup` block, it will be re-built on the next `rake` run. You'll end up with something like this:
 
-![screenshot of motion-settings](https://raw.github.com/qrush/motion-settings/master/screenshot.png)
+![screenshot of motion-settings-bundle](https://raw.github.com/qrush/motion-settings-bundle/master/screenshot.png)
 
 If you're wondering how to access this in code, it's pretty easy:
 
@@ -62,7 +62,7 @@ And so on. Just remember, the defaults aren't populated until your user actually
 
 ## TODO
 
-This project really solely exists to avoid creating/editing the Settings.bundle in XCode. The specs for it so far have been based off [mordaroso/rubymotion-settings](https://github/mordaroso/rubymotion-settings). Please feel free to contribute more ways to generate settings!
+This project really solely exists to avoid creating/editing the Settings.bundle in XCode. The specs for it so far have been based off [mordaroso/rubymotion-settings-bundle](https://github/mordaroso/rubymotion-settings-bundle). Please feel free to contribute more ways to generate settings!
 
 * Make `options` entry work
 * Add a big chunk of text, like licensing info
