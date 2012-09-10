@@ -23,7 +23,7 @@ Or install it yourself as:
 Add a chunk of code into your project's `Rakefile` like so:
 
 ``` ruby
-require 'motion/settings'
+require 'motion-settings'
 
 Motion::Settings.setup do |app|
   # A text field. Allows configuration of a string.

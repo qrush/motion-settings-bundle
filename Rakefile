@@ -22,7 +22,7 @@ task :default do
 require 'bundler'
 Bundler.setup
 
-require 'motion/settings'
+require 'motion-settings'
 
 Motion::Settings.setup do |app|
   # A text field. Allows configuration of a string.
