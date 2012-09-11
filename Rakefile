@@ -33,9 +33,15 @@ Motion::SettingsBundle.setup do |app|
 
   # An on/off switch. Turn something on or off. Default is `false` (off).
   app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
+  
+  # Define a group. 
+  app.group "Great slider", footer_text: "for sliding you know..." do
+    # A slider, configure volume or something linear
+    app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
+  end
 
-  # A slider, configure volume or something linear
-  app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
+  # A not grouped element
+  app.toggle "Not grouped", key: "notgrouping", default: true
 
   # Jump to a screen and choose from a list of options
   app.options "Occupation", key: "occupation" do |group|
