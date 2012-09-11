@@ -38,6 +38,16 @@ module Motion
       def options(title, options = {})
       end
 
+      def group(title, options = {footer_text: ""}, &block)
+        preference(title, "PSGroupSpecifier", options, {
+          "FooterText" => options[:footer_text]
+        })
+        if block_given?
+          yield
+          group("")
+        end
+      end
+
       private
 
       def preference(title, type, options, extras = {})

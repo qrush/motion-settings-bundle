@@ -33,11 +33,17 @@ Motion::SettingsBundle.setup do |bundle|
   # An on/off switch. Turn something on or off. Default is `false` (off).
   bundle.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
 
-  # A slider, configure volume or something linear
-  bundle.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
+  # Define a group. 
+  app.group "Great slider", footer_text: "for sliding you know..." do
+    # A slider, configure volume or something linear
+    app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
+  end
+
+  # A not grouped element
+  app.toggle "Not grouped", key: "notgrouping", default: true
 
   # Jump to a screen and choose from a list of options
-  bundle.options "Occupation", key: "occupation" do |group|
+  app.options "Occupation", key: "occupation" do |group|
     group.option "Padishah Emperor"
     group.option "Mentat", default: true
     group.option "Duke of House Atreides"
