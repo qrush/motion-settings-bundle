@@ -12,7 +12,7 @@ module Motion
         preference(title, "PSTextFieldSpecifier", options, {
           "IsSecure"               => false,
           "KeyboardType"           => "Alphabet",
-          "AutoCapitalizationType" => "Sentences",
+          "AutocapitalizationType" => "Sentences",
           "AutocorrectionType"     => "Default"
         })
       end
