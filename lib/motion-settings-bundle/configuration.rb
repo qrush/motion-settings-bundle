@@ -10,10 +10,10 @@ module Motion
 
       def text(title, options = {})
         preference(title, "PSTextFieldSpecifier", options, {
-          "IsSecure"               => false,
-          "KeyboardType"           => "Alphabet",
-          "AutoCapitalizationType" => "Sentences",
-          "AutocorrectionType"     => "Default"
+          "IsSecure"               => options[:secure]             || false,
+          "KeyboardType"           => options[:keyboard]           || "Alphabet",
+          "AutocapitalizationType" => options[:autocapitalization] || "Sentences",
+          "AutocorrectionType"     => options[:autocorrection]     || "Default"
         })
       end
 
