@@ -67,8 +67,6 @@ And so on. Just remember, the defaults aren't populated until your user actually
 
 This project really solely exists to avoid creating/editing the Settings.bundle in XCode. The specs for it so far have been based off [mordaroso/rubymotion-settings-bundle](https://github/mordaroso/rubymotion-settings-bundle). Please feel free to contribute more ways to generate settings!
 
-* Make `options` entry work
-* Add a big chunk of text, like licensing info
 * Add a custom label, "Settings for Blah"
 * Don't re-create files every time
 * Slider default level doesn't seem to work yet
