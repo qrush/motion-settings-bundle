@@ -27,6 +27,8 @@ require 'motion-settings-bundle'
 Motion::SettingsBundle.setup do |app|
   # A text field. Allows configuration of a string.
   app.text "Name", key: "username", default: "Paul Atreides"
+  app.text "E-mail", key: "email", keyboard: "EmailAddress", autocapitalization: "None"
+  app.text "Password", key: "password", secure: true
 
   # A read-only text field. Use for showing a small chunk of text, maybe a version number
   app.title "Year of Birth", key: "yearOfBirth", default: "10,175 AG"
@@ -37,11 +39,12 @@ Motion::SettingsBundle.setup do |app|
   # A slider, configure volume or something linear
   app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
-  # Jump to a screen and choose from a list of options
-  app.options "Occupation", key: "occupation" do |group|
-    group.option "Padishah Emperor"
-    group.option "Mentat", default: true
-    group.option "Duke of House Atreides"
+  # Child pane to display licenses in
+  app.child "Acknowledgements" do |ack|
+    ack.child "AwesomeOSSLibrary" do |lic|
+      lic.group "Copyright 2013 AwesomeOSSContributor"
+      lic.group "More license text that is terribly formatted but fulfills legal requirements"
+    end
   end
 end
       EOF

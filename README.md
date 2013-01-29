@@ -23,26 +23,27 @@ Add a chunk of code into your project's `Rakefile` like so:
 ``` ruby
 require 'motion-settings-bundle'
 
-Motion::SettingsBundle.setup do |bundle|
+Motion::SettingsBundle.setup do |app|
   # A text field. Allows configuration of a string.
-  bundle.text "Name", key: "username", default: "Paul Atreides"
-  bundle.text "E-mail", key: "email", keyboard: "EmailAddress", autocapitalization: "None"
-  bundle.text "Password", key: "password", secure: true
+  app.text "Name", key: "username", default: "Paul Atreides"
+  app.text "E-mail", key: "email", keyboard: "EmailAddress", autocapitalization: "None"
+  app.text "Password", key: "password", secure: true
 
   # A read-only text field. Use for showing a small chunk of text, maybe a version number
-  bundle.title "Year of Birth", key: "yearOfBirth", default: "10,175 AG"
+  app.title "Year of Birth", key: "yearOfBirth", default: "10,175 AG"
 
   # An on/off switch. Turn something on or off. Default is `false` (off).
-  bundle.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
+  app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
 
   # A slider, configure volume or something linear
-  bundle.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
+  app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
-  # Jump to a screen and choose from a list of options
-  bundle.options "Occupation", key: "occupation" do |group|
-    group.option "Padishah Emperor"
-    group.option "Mentat", default: true
-    group.option "Duke of House Atreides"
+  # Child pane to display licenses in
+  app.child "Acknowledgements" do |ack|
+    ack.child "AwesomeOSSLibrary" do |lic|
+      lic.group "Copyright 2013 AwesomeOSSContributor"
+      lic.group "More license text that is terribly formatted but fulfills legal requirements"
+    end
   end
 end
 ```

@@ -1,10 +1,11 @@
 module Motion
   module SettingsBundle
     class Configuration
-      attr_reader :preferences
+      attr_reader :preferences, :children
 
       def initialize(&block)
         @preferences = []
+        @children = {}
         block.call(self)
       end
 
@@ -35,7 +36,15 @@ module Motion
         })
       end
 
-      def options(title, options = {})
+      def group(title, options = {})
+        group = {"Title" => title, "Type" => "PSGroupSpecifier"}
+        group["FooterText"] = options[:footer] if options[:footer]
+        @preferences << group
+      end
+
+      def child(title, options = {}, &block)
+        @preferences << {"Title" => title, "File" => title, "Type" => "PSChildPaneSpecifier"}.merge(options)
+        @children[title] = Configuration.new(&block)
       end
 
       private
