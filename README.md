@@ -26,6 +26,8 @@ require 'motion-settings-bundle'
 Motion::SettingsBundle.setup do |bundle|
   # A text field. Allows configuration of a string.
   bundle.text "Name", key: "username", default: "Paul Atreides"
+  bundle.text "E-mail", key: "email", keyboard: "EmailAddress", autocapitalization: "None"
+  bundle.text "Password", key: "password", secure: true
 
   # A read-only text field. Use for showing a small chunk of text, maybe a version number
   bundle.title "Year of Birth", key: "yearOfBirth", default: "10,175 AG"
