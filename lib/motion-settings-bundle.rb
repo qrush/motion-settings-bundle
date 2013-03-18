@@ -20,7 +20,7 @@ module Motion
       end
     end
 
-    self.generator = Generator.new(App.config.resources_dir)
+    self.generator = Generator.new(App.config.resources_dirs.first)
   end
 end
 
