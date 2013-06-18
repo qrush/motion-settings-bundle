@@ -22,6 +22,13 @@ module Motion
         preference(title, "PSTitleValueSpecifier", options)
       end
 
+      def multivalue(title, options = {})
+        preference(title, "PSMultiValueSpecifier", options, {
+          "Values" => options[:values],
+          "Titles" => options[:titles].nil? ? options[:values] : options[:titles]
+        })
+      end
+
       def toggle(title, options = {})
         preference(title, "PSToggleSwitchSpecifier", options, {
           "TrueValue"  => true,
