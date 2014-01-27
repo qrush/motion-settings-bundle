@@ -35,6 +35,13 @@ Motion::SettingsBundle.setup do |app|
   # An on/off switch. Turn something on or off. Default is `false` (off).
   app.toggle "Kwisatz Haderach?", key: "superpowersEnabled", default: true
 
+  # MultiValue, to choose from some item
+  app.multivalue "Picture Resolution 1", key: "pictureResolution1", default: "1500", values: ["1500", "1200", "1000"]
+
+  # MultiValue 2, with values and different titles (required when the values are numbers not string)
+  app.multivalue "Picture Resolution 2", key: "pictureResolution2", default: 1500, values: [1500, 1200, 1000],
+    titles: ["1500px", "1200px", "1000px"]
+
   # A slider, configure volume or something linear
   app.slider "Spice Level", key: "spiceLevel", default: 50, min: 1, max: 100
 
